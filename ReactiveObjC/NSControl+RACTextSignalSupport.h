@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///
 /// Returns a signal which sends the current string value of the receiver, then
 /// the new value any time it changes.
-- (RACSignal<NSString *> *)rac_textSignal;
+- (RACSignal *)rac_textSignal;
 
 @end
 

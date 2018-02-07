@@ -16,13 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 ///
 /// They're most helpful in bridging the non-RAC world to RAC, since they let you
 /// manually control the sending of events.
-@interface RACSubject<ValueType> : RACSignal<ValueType> <RACSubscriber>
+@interface RACSubject : RACSignal <RACSubscriber>
 
 /// Returns a new subject.
 + (instancetype)subject;
 
 // Redeclaration of the RACSubscriber method. Made in order to specify a generic type.
-- (void)sendNext:(nullable ValueType)value;
+- (void)sendNext:(nullable id)value;
 
 @end
 

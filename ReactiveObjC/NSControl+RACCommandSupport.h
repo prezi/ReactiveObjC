@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class RACCommand<__contravariant InputType, __covariant ValueType>;
+@class RACCommand;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// to the command's `canExecute`.
 ///
 /// Note: this will reset the control's target and action.
-@property (nonatomic, strong, nullable) RACCommand<__kindof NSControl *, id> *rac_command;
+@property (nonatomic, strong, nullable) RACCommand *rac_command;
 
 @end
 

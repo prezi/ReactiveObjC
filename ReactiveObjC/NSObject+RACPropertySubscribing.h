@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveObjC/EXTKeyPathCoding.h>
-#import "metamacros.h"
+#import <ReactiveObjC/RACEXTKeyPathCoding.h>
+#import "RACmetamacros.h"
 
 /// Creates a signal which observes `KEYPATH` on `TARGET` for changes.
 ///
@@ -66,7 +66,7 @@
 
 @class RACDisposable;
 @class RACTwoTuple<__covariant First, __covariant Second>;
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -96,9 +96,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Returns a signal that sends tuples containing the current value at the key
 /// path and the change dictionary for each KVO callback.
 #if OS_OBJECT_HAVE_OBJC_SUPPORT
-- (RACSignal<RACTwoTuple<id, NSDictionary *> *> *)rac_valuesAndChangesForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options observer:(__weak NSObject *)observer;
+- (RACSignal *)rac_valuesAndChangesForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options observer:(__weak NSObject *)observer;
 #else
-- (RACSignal<RACTwoTuple<id, NSDictionary *> *> *)rac_valuesAndChangesForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options observer:(NSObject *)observer;
+- (RACSignal *)rac_valuesAndChangesForKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options observer:(NSObject *)observer;
 #endif
 
 @end

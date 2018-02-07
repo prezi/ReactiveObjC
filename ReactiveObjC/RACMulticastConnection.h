@@ -10,7 +10,7 @@
 #import "RACAnnotations.h"
 
 @class RACDisposable;
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,10 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 ///
 /// Note that you shouldn't create RACMulticastConnection manually. Instead use
 /// -[RACSignal publish] or -[RACSignal multicast:].
-@interface RACMulticastConnection<__covariant ValueType> : NSObject
+@interface RACMulticastConnection : NSObject
 
 /// The multicasted signal.
-@property (nonatomic, strong, readonly) RACSignal<ValueType> *signal;
+@property (nonatomic, strong, readonly) RACSignal *signal;
 
 /// Connect to the underlying signal by subscribing to it. Calling this multiple
 /// times does nothing but return the existing connection's disposable.
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// multicasted signal.
 ///
 /// Returns the autoconnecting signal.
-- (RACSignal<ValueType> *)autoconnect RAC_WARN_UNUSED_RESULT;
+- (RACSignal *)autoconnect RAC_WARN_UNUSED_RESULT;
 
 @end
 

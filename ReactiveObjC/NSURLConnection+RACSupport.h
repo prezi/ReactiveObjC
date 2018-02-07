@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class RACTwoTuple<__covariant First, __covariant Second>;
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// then send a tuple of the received response and downloaded data, and complete
 /// on a background thread. If any errors occur, the returned signal will error
 /// out.
-+ (RACSignal<RACTwoTuple<NSURLResponse *, NSData *> *> *)rac_sendAsynchronousRequest:(NSURLRequest *)request;
++ (RACSignal *)rac_sendAsynchronousRequest:(NSURLRequest *)request;
 
 @end
 

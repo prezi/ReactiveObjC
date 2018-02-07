@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveObjC/EXTKeyPathCoding.h>
+#import <ReactiveObjC/RACEXTKeyPathCoding.h>
 
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 

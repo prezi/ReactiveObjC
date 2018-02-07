@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Read any available data in the background and send it. Completes when data
 // length is <= 0.
-- (RACSignal<NSData *> *)rac_readInBackground;
+- (RACSignal *)rac_readInBackground;
 
 @end
 

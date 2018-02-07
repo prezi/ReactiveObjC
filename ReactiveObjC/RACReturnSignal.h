@@ -10,8 +10,8 @@
 
 // A private `RACSignal` subclasses that synchronously sends a value to any
 // subscribers, then completes.
-@interface RACReturnSignal<__covariant ValueType> : RACSignal<ValueType>
+@interface RACReturnSignal : RACSignal
 
-+ (RACSignal<ValueType> *)return:(ValueType)value;
++ (RACSignal *)return:(id)value;
 
 @end

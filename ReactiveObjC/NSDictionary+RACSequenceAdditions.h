@@ -8,27 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@class RACSequence<__covariant ValueType>;
-@class RACTwoTuple<__covariant First, __covariant Second>;
+@class RACSequence;
+@class RACTwoTuple;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary<__covariant KeyType, __covariant ObjectType> (RACSequenceAdditions)
+@interface NSDictionary (RACSequenceAdditions)
 
 /// Creates and returns a sequence of key/value tuples.
 ///
 /// Mutating the receiver will not affect the sequence after it's been created.
-@property (nonatomic, copy, readonly) RACSequence<RACTwoTuple<KeyType, ObjectType> *> *rac_sequence;
+@property (nonatomic, copy, readonly) RACSequence *rac_sequence;
 
 /// Creates and returns a sequence corresponding to the keys in the receiver.
 ///
 /// Mutating the receiver will not affect the sequence after it's been created.
-@property (nonatomic, copy, readonly) RACSequence<KeyType> *rac_keySequence;
+@property (nonatomic, copy, readonly) RACSequence *rac_keySequence;
 
 /// Creates and returns a sequence corresponding to the values in the receiver.
 ///
 /// Mutating the receiver will not affect the sequence after it's been created.
-@property (nonatomic, copy, readonly) RACSequence<ObjectType> *rac_valueSequence;
+@property (nonatomic, copy, readonly) RACSequence *rac_valueSequence;
 
 @end
 

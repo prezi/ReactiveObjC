@@ -10,7 +10,7 @@
 
 @class RACCompoundDisposable;
 @class RACDisposable;
-@class RACSignal<__covariant ValueType>;
+@class RACSignal;
 
 NS_ASSUME_NONNULL_BEGIN
 

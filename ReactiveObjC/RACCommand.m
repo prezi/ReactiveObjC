@@ -7,7 +7,7 @@
 //
 
 #import "RACCommand.h"
-#import <ReactiveObjC/EXTScope.h>
+#import <ReactiveObjC/RACEXTScope.h>
 #import "NSArray+RACSequenceAdditions.h"
 #import "NSObject+RACDeallocating.h"
 #import "NSObject+RACDescription.h"
@@ -70,7 +70,7 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	return nil;
 }
 
-- (instancetype)initWithSignalBlock:(RACSignal<id> * (^)(id input))signalBlock {
+- (instancetype)initWithSignalBlock:(RACSignal * (^)(id input))signalBlock {
 	return [self initWithEnabled:nil signalBlock:signalBlock];
 }
 
@@ -79,7 +79,7 @@ const NSInteger RACCommandErrorNotEnabled = 1;
 	[_allowsConcurrentExecutionSubject sendCompleted];
 }
 
-- (instancetype)initWithEnabled:(RACSignal *)enabledSignal signalBlock:(RACSignal<id> * (^)(id input))signalBlock {
+- (instancetype)initWithEnabled:(RACSignal *)enabledSignal signalBlock:(RACSignal * (^)(id input))signalBlock {
 	NSCParameterAssert(signalBlock != nil);
 
 	self = [super init];

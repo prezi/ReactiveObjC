@@ -24,16 +24,16 @@ typedef NS_ENUM(NSUInteger, RACEventType) {
 /// Represents an event sent by a RACSignal.
 ///
 /// This corresponds to the `Notification` class in Rx.
-@interface RACEvent<__covariant ValueType> : NSObject <NSCopying>
+@interface RACEvent : NSObject <NSCopying>
 
 /// Returns a singleton RACEvent representing the `completed` event.
-+ (RACEvent<ValueType> *)completedEvent;
++ (RACEvent *)completedEvent;
 
 /// Returns a new event of type RACEventTypeError, containing the given error.
-+ (RACEvent<ValueType> *)eventWithError:(nullable NSError *)error;
++ (RACEvent *)eventWithError:(nullable NSError *)error;
 
 /// Returns a new event of type RACEventTypeNext, containing the given value.
-+ (RACEvent<ValueType> *)eventWithValue:(nullable ValueType)value;
++ (RACEvent *)eventWithValue:(nullable id)value;
 
 /// The type of event represented by the receiver.
 @property (nonatomic, assign, readonly) RACEventType eventType;
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSUInteger, RACEventType) {
 
 /// The value associated with an event of type RACEventTypeNext. This will be
 /// nil for all other event types.
-@property (nonatomic, strong, readonly, nullable) ValueType value;
+@property (nonatomic, strong, readonly, nullable) id value;
 
 @end
 
