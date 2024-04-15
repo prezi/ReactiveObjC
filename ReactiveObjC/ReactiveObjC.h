@@ -31,7 +31,6 @@ FOUNDATION_EXPORT const unsigned char ReactiveObjCVersionString[];
 #import <ReactiveObjC/NSString+RACSequenceAdditions.h>
 #import <ReactiveObjC/NSString+RACSupport.h>
 #import <ReactiveObjC/NSIndexSet+RACSequenceAdditions.h>
-#import <ReactiveObjC/NSUserDefaults+RACSupport.h>
 #import <ReactiveObjC/RACBehaviorSubject.h>
 #import <ReactiveObjC/RACChannel.h>
 #import <ReactiveObjC/RACCommand.h>
